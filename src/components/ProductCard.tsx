@@ -39,9 +39,7 @@ export const ProductCard = ({
           </Badge>
         )}
         <Button
-          variant="ghost"
-          size="icon"
-          className="absolute top-3 right-3 bg-white/80 hover:bg-white"
+          className="absolute top-3 right-3 bg-white/80 hover:bg-white p-2 rounded-full"
         >
           <Heart className="h-4 w-4" />
         </Button>
@@ -62,7 +60,7 @@ export const ProductCard = ({
       </CardContent>
       
       <CardFooter className="p-4 pt-0">
-        <Button className="w-full" variant="hero">
+        <Button className="w-full">
           <ShoppingCart className="h-4 w-4 mr-2" />
           Add to Cart
         </Button>

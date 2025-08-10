@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import productHeadphones from "@/assets/product-headphones.jpg";
 import productPhone from "@/assets/product-phone.jpg";
 import productLaptop from "@/assets/product-laptop.jpg";
+import { Link } from "react-router-dom";
 
 const featuredProducts = [
   {
@@ -55,10 +56,11 @@ export const FeaturedProducts = () => {
         </div>
         
         <div className="text-center">
+          <Link to='/products'>
           <Button variant="hero" size="lg">
             View All Products
             <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          </Button></Link>
         </div>
       </div>
     </section>

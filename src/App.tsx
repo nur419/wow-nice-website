@@ -7,6 +7,10 @@ import Index from "./pages/Index";
 import Products from "./pages/Products";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import LoginPage from "./pages/LoginPage";
+import Dashboard from "./pages/Dashboard";
+import Profile from "./pages/Profile";
+
 
 const queryClient = new QueryClient();
 
@@ -16,13 +20,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
+    
+          <div className=" px-0 lg:px-10">
+           <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/products" element={<Products />} />
           <Route path="/about" element={<About />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {/* <Route path="/Dashboard" element={<Dashboard />} />
+          <Route path="/LoginPage" element={<LoginPage />} /> */}
+            <Route path="/login" element={<LoginPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </div>
+      
+       
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

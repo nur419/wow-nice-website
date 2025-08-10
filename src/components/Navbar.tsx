@@ -18,6 +18,7 @@ export const Navbar = ({ isLoggedIn = false, onAuthToggle }: NavbarProps) => {
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
     { href: "/about", label: "About" },
+    { href: "/dashboard", label: "Dashboard" },
   ];
 
   const protectedRoutes = [
@@ -25,7 +26,7 @@ export const Navbar = ({ isLoggedIn = false, onAuthToggle }: NavbarProps) => {
     { href: "/orders", label: "My Orders" },
     { href: "/wishlist", label: "Wishlist" },
     { href: "/profile", label: "Profile" },
-    { href: "/cart", label: "Cart" },
+   
   ];
 
   const routes = isLoggedIn ? [...publicRoutes, ...protectedRoutes] : publicRoutes;
@@ -63,23 +64,23 @@ export const Navbar = ({ isLoggedIn = false, onAuthToggle }: NavbarProps) => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="ghost" size="icon">
+          <Button>
             <Search className="h-5 w-5" />
           </Button>
           {isLoggedIn ? (
             <>
-              <Button variant="ghost" size="icon">
+              <Button className="variant-ghost p-2 rounded-full">
                 <ShoppingCart className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon">
+              <Button className="variant-ghost p-2 rounded-full">
                 <User className="h-5 w-5" />
               </Button>
-              <Button variant="outline" onClick={onAuthToggle}>
+              <Button className="variant-outline" onClick={onAuthToggle}>
                 Logout
               </Button>
             </>
           ) : (
-            <Button variant="hero" onClick={onAuthToggle}>
+            <Button onClick={onAuthToggle}>
               Login
             </Button>
           )}
@@ -88,11 +89,11 @@ export const Navbar = ({ isLoggedIn = false, onAuthToggle }: NavbarProps) => {
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
+            <Button className="variant-ghost p-2 rounded-full">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+          <SheetContent className="w-[300px] sm:w-[400px]">
             <div className="flex flex-col space-y-4 mt-8">
               {routes.map((route) => (
                 <Link
@@ -111,13 +112,14 @@ export const Navbar = ({ isLoggedIn = false, onAuthToggle }: NavbarProps) => {
               ))}
               <div className="pt-4 border-t">
                 {isLoggedIn ? (
-                  <Button variant="outline" onClick={onAuthToggle} className="w-full">
+                  <Button onClick={onAuthToggle} className="w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground">
                     Logout
                   </Button>
                 ) : (
-                  <Button variant="hero" onClick={onAuthToggle} className="w-full">
+                 <Link to='/LoginPage'>
+                   <Button className="w-full">
                     Login
-                  </Button>
+                  </Button></Link>
                 )}
               </div>
             </div>

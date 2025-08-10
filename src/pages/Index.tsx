@@ -105,7 +105,7 @@ const Index = () => {
                           </span>
                         )}
                       </div>
-                      <Button variant="hero" size="sm">See More</Button>
+                      <Button className="border ">See More</Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -126,10 +126,10 @@ const Index = () => {
                 Save up to 40% on selected electronics. Premium quality, unbeatable prices!
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" variant="accent" className="text-lg px-8 py-6">
+                <Button className="text-lg px-8 py-6">
                   Shop Sale Items
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Button className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-secondary">
                   Learn More
                 </Button>
               </div>
@@ -175,7 +175,7 @@ const Index = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
-                <Card key={index} className="border-0 shadow-elegant">
+                <Card key={index} className="border-green-200 shadow-elegant">
                   <CardContent className="p-6">
                     <div className="flex items-center mb-4">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -192,20 +192,20 @@ const Index = () => {
         </section>
         
         {/* Newsletter */}
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground ">
           <div className="container px-4 text-center">
             <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl font-bold mb-4">Stay in the Loop</h2>
               <p className="text-primary-foreground/80 mb-8">
                 Get the latest updates on new products, exclusive deals, and tech news.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <div className="flex flex-col items-center sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   className="flex-1 px-4 py-3 rounded-lg bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
                 />
-                <Button variant="accent" size="lg">
+                <Button className="border  bg-blue-600">
                   Subscribe
                 </Button>
               </div>
